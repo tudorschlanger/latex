@@ -1,0 +1,61 @@
+\documentclass[letterpaper,10pt]{article}
+
+% --- Fonts and math 
+\usepackage{lmodern}  
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,eucal,bbold,bm}
+
+% --- Graphics 
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{hyperref} 
+\usepackage{tikz} 
+\usepackage{array, tabularx, booktabs, subcaption} % tables 
+\usepackage{pdflscape}
+\usepackage{siunitx}
+
+% --- Margins 
+\usepackage[left=1in,right=1in,top=0.75in,bottom =1in,marginparwidth=1.5in,footskip=0.7in]{geometry} % After hyperref
+
+% --- Itemsep 
+\usepackage{enumitem}
+\setlist[enumerate]{itemsep=-0.4em,topsep=0.2em}
+\setlist[itemize]{itemsep=-0.4em,topsep=0.2em}
+
+% --- Frames 
+\usepackage{mdframed}
+\newmdtheoremenv{defn}{Definition}
+\newmdtheoremenv{thm}{Theorem}
+\newmdtheoremenv{lemma}{Lemma}
+\newmdtheoremenv{prop}{Proposition}
+
+
+% --- Custom Commands ---
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\suminfty}[1]{\sum_{#1=0}^\infty}
+\newcommand{\Lcal}{\mathcal{L}}
+\newcommand{\prtl}[2]{\frac{\partial #1}{\partial #2}}
+\renewcommand{\div}[2]{\frac{d #1}{d #2}}
+
+\newcommand{\limzero}[1]{\lim_{#1\rightarrow\zero}}
+\newcommand{\liminfty}[1]{\lim_{#1\rightarrow\infty}}
+\newcommand{\suchthat}{\text{ s.t. }}
+\newcommand{\wrt}{\text{ w.r.t. }}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\ind}{\perp\!\!\!\perp} 
+\newcommand{\nind}{\not\!\perp\!\!\!\perp}
+\newcommand{\one}[1]{\mathbb{1}\{#1\}}
+
+% ---------- Document ----------
+
+\begin{document}
+
+\begin{center}
+	\Large \textbf{Document} \\
+	\normalsize Tudor Schlanger
+\end{center}
+
+\end{document}

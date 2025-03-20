@@ -1,0 +1,165 @@
+\documentclass[10pt,english,aspectratio=43]{beamer}
+
+%%%%%%%% List of packages %%%%%%%%%%%%%%
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc} % fonts
+\usepackage{amsmath,amssymb,amsthm,eucal,bbold,bm}  % math equations and fonts
+\usepackage{amsthm}   % sets math theorems
+\usepackage{graphicx} %
+\usepackage{subcaption}  
+\usepackage[normalem]{ulem} 
+\usepackage{color} 
+\usepackage{transparent}
+\usepackage{setspace}
+\usepackage{pgfplots}  % tikz 
+% \usepackage{nopageno} % no page numbering
+\usepackage[nodayofweek]{datetime}
+\usepackage{appendixnumberbeamer}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta}
+\usepackage{array} % tables 
+
+%%%%%%%% Beamer settings %%%%%%%%%
+
+\usepackage{beamerthemesplit}
+\setbeamercovered{transparent}
+\setbeamertemplate{caption}[numbered] % used for captions for figs and tables
+
+\beamertemplatenavigationsymbolsempty
+
+%%%%%%%% Theme settings %%%%%%%%%
+\usetheme{CambridgeUS}
+\usecolortheme{dolphin}
+
+\hypersetup{pdfpagemode=None}
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{} 
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
+
+\setbeamertemplate{itemize item}[triangle]
+\setbeamertemplate{itemize subitem}[triangle]
+\setbeamertemplate{itemize subsubitem}{-}
+
+\addtobeamertemplate{navigation symbols}{}{%
+    \usebeamerfont{footline}%
+    \usebeamercolor[fg]{footline}%
+    \hspace{1em}%
+    \insertframenumber/\inserttotalframenumber
+}
+
+\newcommand\makebeamertitle{\frame{\maketitle}}%
+\newcommand{\backupbegin}{
+  \newcounter{finalframe}
+ \setcounter{finalframe}{\value{framenumber}}
+}
+\resetcounteronoverlays{lstlisting}
+\setbeamertemplate{footline}[frame number]
+\beamertemplatenavigationsymbolsempty
+
+\definecolor{darkred}{RGB}{202, 0, 32}
+\definecolor{darkblue}{RGB}{62,52,146}
+\definecolor{light_gray}{gray}{0.65}
+
+\setbeamertemplate{footline}{\hfill\insertpagenumber\vspace*{1em}\hspace*{1em}} % removes the total count from page numbering
+
+\setbeamersize
+{
+    text margin left=2em,
+    text margin right=2em
+}
+
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{Outline}
+        \tableofcontents[currentsection, 
+                         currentsubsection,
+                         hideothersubsections] 
+
+    \end{frame}
+}
+
+%%%%%%%% USER COMMANDS %%%%%%%%%
+
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\suminfty}[1]{\sum_{#1=0}^\infty}
+\newcommand{\Lcal}{\mathcal{L}}
+\newcommand{\prtl}[2]{\frac{\partial #1}{\partial #2}}
+\renewcommand{\div}[2]{\frac{d #1}{d #2}}
+\newcommand{\limzero}[1]{\lim_{#1\rightarrow\zero}}
+\newcommand{\liminfty}[1]{\lim_{#1\rightarrow\infty}}
+\newcommand{\suchthat}{\text{ s.t. }}
+\newcommand{\wrt}{\text{ w.r.t. }}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\ind}{\perp\!\!\!\perp} 
+\newcommand{\nind}{\not\!\perp\!\!\!\perp}
+\newcommand{\one}[1]{\mathbb{1\{\text{#1}\}}}
+\newcommand{\Fcal}{\mathcal{F}}
+
+\makeatletter
+\newcommand{\xRightarrow}[2][]{\ext@arrow 0359\Rightarrowfill@{#1}{#2}}
+\makeatother
+
+%%%%%%%% REFERENCES %%%%%%%%%
+ 
+\usepackage{natbib}
+\bibliographystyle{aea.bst}
+
+%%%%%%%% TITLE SLIDES %%%%%%%%%
+
+    \title[]{Title\\ {\small subtitle}} 
+    
+    \author[] % (optional, for multiple authors)
+    {Author \inst{1}}
+    
+    \institute[] % (optional)
+    {
+      \inst{1}%
+      University
+    }
+    
+    \date[] % (optional)
+    {\small Presentation for X, Date}
+
+
+%%%%%%%% DOCUMENT BEGINS %%%%%%%%
+\begin{document}
+
+% Title page 
+\makebeamertitle
+
+%%%%%%%% OUTLINE %%%%%%%%%
+
+%% Outline frame
+% \begin{frame}{Outline}
+%    \tableofcontents
+% \end{frame}
+
+%%%%%%%% MOTIVATION %%%%%%%%
+% What the paper is about  
+\begin{frame}{Motivation}
+
+\end{frame}
+
+
+% Thank you 
+\begin{frame}{Q\&A}
+    \begin{center}
+        Thank you!
+    \end{center}
+\end{frame}
+
+
+%%%%%%%% REFERENCES %%%%%%%%%%
+
+% \begin{frame}[allowframebreaks]{References}
+%     \bibliography{StudentLoan.bib}
+% \end{frame}
+
+
+\end{document}
