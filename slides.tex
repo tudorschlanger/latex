@@ -1,38 +1,34 @@
 \documentclass[10pt,english,aspectratio=169]{beamer}
 
 %%%%%%%% List of packages %%%%%%%%%%%%%%
+% Fonts 
 \usepackage{lmodern}
-\usepackage[utf8]{inputenc} % fonts
-\usepackage{amsmath,amssymb,amsthm,eucal,bbold,bm}  % math equations and fonts
+\usepackage[utf8]{inputenc}
+\usepackage[normalem]{ulem}  % allows underlining and striking 
+% Math equations and fonts
+\usepackage{amsmath,amssymb,amsthm,eucal,bbold,bm}  % 
+% Figs and tables
 \usepackage{graphicx} %
-\usepackage{array, tabularx, booktabs, subcaption, threeparttable, longtable} % tables 
-\usepackage[normalem]{ulem} 
-\usepackage{color} 
-\usepackage{transparent}
-\usepackage{setspace}
-\usepackage{pgfplots}  % tikz 
-% \usepackage{nopageno} % no page numbering
-\usepackage[nodayofweek]{datetime}
-\usepackage{appendixnumberbeamer}
+\usepackage{array, tabularx, booktabs, subcaption, threeparttable} %
+% Tikz 
+\usepackage{pgfplots}
+%\pgfplotsset{compat=1.18}
 \usepackage{tikz}
 \usetikzlibrary{positioning, arrows.meta}
+% Miscellaneous 
+\usepackage{transparent}
+\usepackage{setspace}
+\usepackage[nodayofweek]{datetime}
+
 
 %%%%%%%% Beamer settings %%%%%%%%%
-
-\usepackage{beamerthemesplit}
-\setbeamercovered{transparent}
-\setbeamertemplate{caption}[numbered] % used for captions for figs and tables
-
-\beamertemplatenavigationsymbolsempty
-
-%%%%%%%% Theme settings %%%%%%%%%
 \usetheme{CambridgeUS}
 \usecolortheme{dolphin}
+\usepackage{appendixnumberbeamer} % enables \inserttotalframenumber
 
-\hypersetup{pdfpagemode=None}
-\setbeamertemplate{headline}{}
-\setbeamertemplate{footline}{} 
-\setbeamertemplate{navigation symbols}{}
+
+% Itemize environment 
+\setbeamercovered{invisible} % allows for hidden overlays 
 \setbeamertemplate{itemize items}[default]
 \setbeamertemplate{enumerate items}[default]
 
@@ -40,34 +36,42 @@
 \setbeamertemplate{itemize subitem}[triangle]
 \setbeamertemplate{itemize subsubitem}{-}
 
-\addtobeamertemplate{navigation symbols}{}{%
-    \usebeamerfont{footline}%
-    \usebeamercolor[fg]{footline}%
-    \hspace{1em}%
-    \insertframenumber/\inserttotalframenumber
+
+% Headline and Footline changes 
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{ % frame-based numbering (overlay independent)
+  \leavevmode
+  \hbox{
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.25ex,leftskip=1em,rightskip=1em]{footline}
+      \hfill \insertframenumber/\inserttotalframenumber
+    \end{beamercolorbox}
+  }
 }
+\setbeamertemplate{navigation symbols}{} % remove navigation slides 
 
-\newcommand\makebeamertitle{\frame{\maketitle}}%
-\newcommand{\backupbegin}{
-  \newcounter{finalframe}
- \setcounter{finalframe}{\value{framenumber}}
+
+% Center the title of a slide 
+\makeatletter
+\setbeamertemplate{frametitle}{
+  \nointerlineskip
+  \begin{beamercolorbox}[wd=\paperwidth,sep=0.35cm,center]{frametitle}
+    {\usebeamerfont{frametitle}\insertframetitle\par}
+    \ifx\insertframesubtitle\@empty\else
+      \vspace{0.15cm}
+      {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\par}
+    \fi
+  \end{beamercolorbox}
 }
-\resetcounteronoverlays{lstlisting}
-\setbeamertemplate{footline}[frame number]
-\beamertemplatenavigationsymbolsempty
+\makeatother
 
-\definecolor{darkred}{RGB}{202, 0, 32}
-\definecolor{darkblue}{RGB}{62,52,146}
-\definecolor{light_gray}{gray}{0.65}
-
-\setbeamertemplate{footline}{\hfill\insertpagenumber\vspace*{1.5em}\hspace*{1.5em}} % removes the total count from page numbering
-
+% Margins 
 \setbeamersize
 {
     text margin left=2em,
     text margin right=2em
 }
 
+% Sections 
 \AtBeginSection[]
 {
     \begin{frame}
@@ -79,8 +83,14 @@
     \end{frame}
 }
 
-%%%%%%%% USER COMMANDS %%%%%%%%%
 
+%%%%%%%% USER COMMANDS %%%%%%%%%
+% Custom colors 
+\definecolor{darkred}{RGB}{202, 0, 32}
+\definecolor{darkblue}{RGB}{62,52,146}
+\definecolor{light_gray}{gray}{0.65}
+
+% Custom formulas
 \newcommand{\E}{\mathrm{E}}
 \newcommand{\Var}{\mathrm{Var}}
 \newcommand{\Cov}{\mathrm{Cov}}
@@ -128,8 +138,10 @@
 %%%%%%%% DOCUMENT BEGINS %%%%%%%%
 \begin{document}
 
-% Title page 
-\makebeamertitle
+% Title page (unnumbered)
+\begin{frame}[plain, noframenumbering]
+    \maketitle
+\end{frame}
 
 %%%%%%%% OUTLINE %%%%%%%%%
 
@@ -146,11 +158,9 @@
 \end{frame}
 
 
-% Thank you 
-\begin{frame}{Q\&A}
-    \begin{center}
-        Thank you!
-    \end{center}
+%%%%%%%% CONCLUSION %%%%%%%%
+\begin{frame}{Conclusion}
+
 \end{frame}
 
 
